@@ -1,6 +1,9 @@
 <mvc:View controllerName="pl.tauron.db.flights.controller.Main"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
-    <Page id="page" title="{i18n>title} v3">
+    <Page id="page" title="{i18n>title}">
+        <Label id="_IDGenLabel" labelFor="nameInput"></Label>
+        <Input id="nameInput" width="20rem" placeholder="{i18n>namePlaceholder}" liveChange=".onNameLiveChange"></Input>
+        <Button id="nameButton" text="{i18n>greetButton}" type="Emphasized" press=".onGreet" enabled="false"></Button>
     </Page>
 </mvc:View>
