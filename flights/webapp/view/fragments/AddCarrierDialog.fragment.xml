@@ -1,0 +1,23 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form">
+    <Dialog id="addCarrierDialog" title="{i18n>addCarrierTitle}" contentWidth="25rem">
+        <form:SimpleForm id="_IDGenSimpleForm1" editable="true" layout="ResponsiveGridLayout">
+            <Label id="_IDGenLabel" text="{i18n>carrierId}" required="true"/>
+            <Input id="_IDGenInput" value="{view>/newCarrier/id}" maxLength="3"/>
+            <Label id="_IDGenLabel1" text="{i18n>carrierName}" required="true"/>
+            <Input id="_IDGenInput1" value="{view>/newCarrier/name}"/>
+            <Label id="_IDGenLabel2" text="{i18n>currency}"/>
+            <Input id="_IDGenInput2" value="{view>/newCarrier/currency}" maxLength="5"/>
+        </form:SimpleForm>
+        <beginButton>
+            <Button id="_IDGenButton2" text="{i18n>save}" type="Emphasized" press=".onSaveCarrier"
+                enabled="{= !!${view>/newCarrier/id} &amp;&amp; !!${view>/newCarrier/name} }"/>
+        </beginButton>
+        <endButton>
+            <Button id="_IDGenButton3" text="{i18n>cancel}" press=".onCloseDialog"/>
+        </endButton>
+
+    </Dialog>
+</core:FragmentDefinition>

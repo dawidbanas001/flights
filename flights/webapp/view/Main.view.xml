@@ -19,6 +19,7 @@
             </f:DynamicPageHeader>
         </f:header>
         <f:content>
+        <VBox id="_IDGenVBox">
             <Table noDataText="Drop column list items here and columns in the area above" id="table2" items="{carriers>/Carriers}">
             <items>
                 <ColumnListItem type="Active" id="item2">
@@ -45,6 +46,35 @@
                         <Label text="{i18n>status}" id="label8"/>
                     </header>
                 </Column></columns></Table>
+
+                <Table id="flightTable" items="{carriers>/Flights}" class="sapUiMediumMarginTop">
+                    <headerToolbar>
+                        <OverflowToolbar id="_IDGenOverflowToolbar">
+                            <Title id="_IDGenTitle1" text="{ parts: ['i18n>flightsTitle', 'carriers>/Flights'], formatter: '.formatter.countTitle' }"/>
+                        </OverflowToolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column id="_IDGenColumn1"><Text id="_IDGenText" text="{i18n>carrier}"/></Column>
+                        <Column id="_IDGenColumn2"><Text id="_IDGenText1" text="{i18n>connection}"/></Column>
+                        <Column id="_IDGenColumn3"><Text id="_IDGenText2" text="{i18n>route}"/></Column>
+                        <Column id="_IDGenColumn4" minScreenWidth="Tablet" demandPopin="true"><Text id="_IDGenText3" text="{i18n>departure}"/></Column>
+                        <Column id="_IDGenColumn5" hAlign="End"><Text id="_IDGenText4" text="{i18n>price}"/></Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem id="_IDGenColumnListItem" type="Navigation" press=".onFlightPress">
+                            <cells>
+                                <ObjectIdentifier id="_IDGenObjectIdentifier1" title="{carriers>carrierName}" text="{carriers>carrierId}"/>
+                                <Text id="_IDGenText5" text="{carriers>connId}"/>
+                                <Text id="_IDGenText6" text="{carriers>from} → {carriers>to}"/>
+                                <Text id="_IDGenText7" text="{carriers>depTime}"/>
+                                <ObjectNumber id="_IDGenObjectNumber1"
+                                    number="{ path: 'carriers>price', type: 'Float', formatOptions: { minFractionDigits: 2, maxFractionDigits: 2 } }"
+                                    unit="{carriers>currency}"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
         </f:content>
     </f:DynamicPage>
 </mvc:View>

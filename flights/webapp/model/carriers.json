@@ -5,5 +5,15 @@
     { "id": "SQ", "name": "Singapore Airlines", "currency": "SGD", "avgPrice": 921, "status": "Active" },
     { "id": "UA", "name": "United Airlines", "currency": "USD", "avgPrice": 405.75, "status": "Inactive" },
     { "id": "JL", "name": "Japan Airlines", "currency": "JPY", "avgPrice": 68000, "status": "Active" }
+  ],
+  "Flights": [
+    { "carrierId": "AA", "carrierName": "American Airlines", "connId": "0017", "from": "JFK", "to": "SFO", "depTime": "11:00", "arrTime": "14:01", "duration": "6 h 01 min", "distance": 4164, "aircraft": "Boeing 737-800", "price": 422.94, "currency": "USD" },
+    { "carrierId": "AA", "carrierName": "American Airlines", "connId": "0064", "from": "SFO", "to": "JFK", "depTime": "09:00", "arrTime": "17:21", "duration": "5 h 21 min", "distance": 4164, "aircraft": "Boeing 737-800", "price": 422.94, "currency": "USD" },
+    { "carrierId": "LH", "carrierName": "Lufthansa", "connId": "0400", "from": "FRA", "to": "JFK", "depTime": "10:10", "arrTime": "12:40", "duration": "8 h 30 min", "distance": 6162, "aircraft": "Airbus A340-600", "price": 666, "currency": "EUR" },
+    { "carrierId": "LH", "carrierName": "Lufthansa", "connId": "0401", "from": "JFK", "to": "FRA", "depTime": "17:35", "arrTime": "07:15 (+1)", "duration": "7 h 40 min", "distance": 6162, "aircraft": "Airbus A340-600", "price": 666, "currency": "EUR" },
+    { "carrierId": "LH", "carrierName": "Lufthansa", "connId": "1402", "from": "FRA", "to": "WAW", "depTime": "13:30", "arrTime": "15:05", "duration": "1 h 35 min", "distance": 897, "aircraft": "Airbus A321", "price": 189, "currency": "EUR" },
+    { "carrierId": "SQ", "carrierName": "Singapore Airlines", "connId": "0002", "from": "SIN", "to": "SFO", "depTime": "17:00", "arrTime": "19:25", "duration": "15 h 25 min", "distance": 13593, "aircraft": "Airbus A350-900", "price": 1450, "currency": "SGD" },
+    { "carrierId": "UA", "carrierName": "United Airlines", "connId": "0941", "from": "FRA", "to": "SFO", "depTime": "14:30", "arrTime": "17:06", "duration": "11 h 36 min", "distance": 9148, "aircraft": "Boeing 787-9", "price": 860, "currency": "USD" },
+    { "carrierId": "JL", "carrierName": "Japan Airlines", "connId": "0407", "from": "NRT", "to": "FRA", "depTime": "13:30", "arrTime": "17:15", "duration": "12 h 45 min", "distance": 9354, "aircraft": "Boeing 787-9", "price": 89000, "currency": "JPY" }
   ]
 }

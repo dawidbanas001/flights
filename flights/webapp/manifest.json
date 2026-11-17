@@ -89,12 +89,23 @@
           "target": [
             "TargetMain"
           ]
+        },
+        {
+          "name": "RouteFlight",
+          "pattern": "flight/{carrierId}/{connId}",
+          "target": [
+            "TargetFlightDetail"
+          ]
         }
       ],
       "targets": {
         "TargetMain": {
           "id": "Main",
           "name": "Main"
+        },
+        "TargetFlightDetail": {
+          "id": "FlightDetail",
+          "name": "FlightDetail"
         }
       }
     },
