@@ -1,0 +1,9 @@
+{
+  "Carriers": [
+    { "id": "AA", "name": "American Airlines", "currency": "USD", "avgPrice": 412.5, "status": "Active" },
+    { "id": "LH", "name": "Lufthansa", "currency": "EUR", "avgPrice": 389.9, "status": "Active" },
+    { "id": "SQ", "name": "Singapore Airlines", "currency": "SGD", "avgPrice": 921, "status": "Active" },
+    { "id": "UA", "name": "United Airlines", "currency": "USD", "avgPrice": 405.75, "status": "Inactive" },
+    { "id": "JL", "name": "Japan Airlines", "currency": "JPY", "avgPrice": 68000, "status": "Active" }
+  ]
+}

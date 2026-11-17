@@ -1,9 +1,50 @@
-<mvc:View controllerName="pl.tauron.db.flights.controller.Main"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-        <Label id="_IDGenLabel" labelFor="nameInput"></Label>
-        <Input id="nameInput" width="20rem" placeholder="{i18n>namePlaceholder}" liveChange=".onNameLiveChange"></Input>
-        <Button id="nameButton" text="{i18n>greetButton}" type="Emphasized" press=".onGreet" enabled="false"></Button>
-    </Page>
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" controllerName="pl.tauron.db.flights.controller.Main">
+    <f:DynamicPage id="carrierPage" headerExpanded="true" xmlns:f="sap.f">
+        <f:title>
+            <f:DynamicPageTitle id="_IDGenDynamicPageTitle1">
+                <f:heading>
+                    <Title id="_IDGenTitle" text="{i18n>title}"/>
+                </f:heading>
+                <f:actions>
+                    <Button id="_IDGenButton" text="{i18n>addCarrier}" icon="sap-icon://add" type="Emphasized" press=".onOpenAddDialog"/>
+                </f:actions>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:header>
+            <f:DynamicPageHeader id="_IDGenDynamicPageHeader1">
+                <HBox id="_IDGenHBox" alignItems="Center">
+                    <Input id="nameInput" width="20rem" placeholder="{i18n>namePlaceholder}" liveChange=".onNameLiveChange"/>
+                    <Button id="nameButton" text="{i18n>greetButton}" type="Emphasized" press=".onGreet" enabled="false"/>
+                </HBox>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <Table noDataText="Drop column list items here and columns in the area above" id="table2" items="{carriers>/Carriers}">
+            <items>
+                <ColumnListItem type="Active" id="item2">
+                    <cells>
+                        <ObjectIdentifier id="_IDGenObjectIdentifier" title="{carriers>name}" text="{carriers>id}"></ObjectIdentifier>
+                        <ObjectNumber id="_IDGenObjectNumber" unit="{carriers>currency}" number="{path: 'carriers>avgPrice', type: 'sap.ui.model.type.Float', formatOptions: { minFractionDigits: 2, maxFractionDigits: 2 }}"></ObjectNumber>
+                        <ObjectStatus id="_IDGenObjectStatus" text="{carriers>status}" state="{path: 'carriers>status', formatter: '.formatter.statusState'}"></ObjectStatus>
+                    </cells>
+                </ColumnListItem>
+            </items>
+            <columns>
+                <Column id="column6">
+                    <header>
+                        <Label text="{i18n>carrier}" id="label6"/>
+                    </header>
+                </Column>
+                <Column id="column7" hAlign="End">
+                    <header>
+                        <Label text="{i18n>avgPrice}" id="label7"/>
+                    </header>
+                </Column>
+                <Column id="column8">
+                    <header>
+                        <Label text="{i18n>status}" id="label8"/>
+                    </header>
+                </Column></columns></Table>
+        </f:content>
+    </f:DynamicPage>
 </mvc:View>
