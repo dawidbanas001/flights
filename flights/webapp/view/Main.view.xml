@@ -1,5 +1,5 @@
 <mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" controllerName="pl.tauron.db.flights.controller.Main">
-    <f:DynamicPage id="carrierPage" headerExpanded="true" xmlns:f="sap.f">
+    <f:DynamicPage xmlns:f="sap.f" id="carrierPage" headerExpanded="true">
         <f:title>
             <f:DynamicPageTitle id="_IDGenDynamicPageTitle1">
                 <f:heading>
@@ -7,6 +7,7 @@
                 </f:heading>
                 <f:actions>
                     <Button id="_IDGenButton" text="{i18n>addCarrier}" icon="sap-icon://add" type="Emphasized" press=".onOpenAddDialog"/>
+                    <Button id="_IDGenButton1" text="{i18n>connections}" type="Emphasized" press=".onOpenConnections"/>
                 </f:actions>
             </f:DynamicPageTitle>
         </f:title>
@@ -24,9 +25,9 @@
             <items>
                 <ColumnListItem type="Active" id="item2">
                     <cells>
-                        <ObjectIdentifier id="_IDGenObjectIdentifier" title="{carriers>name}" text="{carriers>id}"></ObjectIdentifier>
-                        <ObjectNumber id="_IDGenObjectNumber" unit="{carriers>currency}" number="{path: 'carriers>avgPrice', type: 'sap.ui.model.type.Float', formatOptions: { minFractionDigits: 2, maxFractionDigits: 2 }}"></ObjectNumber>
-                        <ObjectStatus id="_IDGenObjectStatus" text="{carriers>status}" state="{path: 'carriers>status', formatter: '.formatter.statusState'}"></ObjectStatus>
+                        <ObjectIdentifier id="_IDGenObjectIdentifier" title="{carriers>name}" text="{carriers>id}"/>
+                        <ObjectNumber id="_IDGenObjectNumber" unit="{carriers>currency}" number="{path: 'carriers>avgPrice', type: 'sap.ui.model.type.Float', formatOptions: { minFractionDigits: 2, maxFractionDigits: 2 }}"/>
+                        <ObjectStatus id="_IDGenObjectStatus" text="{carriers>status}" state="{path: 'carriers>status', formatter: '.formatter.statusState'}"/>
                     </cells>
                 </ColumnListItem>
             </items>
@@ -50,7 +51,7 @@
                 <Table id="flightTable" items="{carriers>/Flights}" class="sapUiMediumMarginTop">
                     <headerToolbar>
                         <OverflowToolbar id="_IDGenOverflowToolbar">
-                            <Title id="_IDGenTitle1" text="{ parts: ['i18n>flightsTitle', 'carriers>/Flights'], formatter: '.formatter.countTitle' }"/>
+                            <Title id="_IDGenTitle1" text="{ parts: ['i18n>flightsTitle', 'carriers&gt;/Flights'], formatter: '.formatter.countTitle' }"/>
                         </OverflowToolbar>
                     </headerToolbar>
                     <columns>
@@ -67,9 +68,33 @@
                                 <Text id="_IDGenText5" text="{carriers>connId}"/>
                                 <Text id="_IDGenText6" text="{carriers>from} → {carriers>to}"/>
                                 <Text id="_IDGenText7" text="{carriers>depTime}"/>
-                                <ObjectNumber id="_IDGenObjectNumber1"
-                                    number="{ path: 'carriers>price', type: 'Float', formatOptions: { minFractionDigits: 2, maxFractionDigits: 2 } }"
-                                    unit="{carriers>currency}"/>
+                                <ObjectNumber id="_IDGenObjectNumber1" number="{ path: 'carriers>price', type: 'Float', formatOptions: { minFractionDigits: 2, maxFractionDigits: 2 } }" unit="{carriers>currency}"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+
+                <Table id="flightTableoData" items="{/Flight}" class="sapUiMediumMarginTop" growingThreshold="2">
+                    <headerToolbar>
+                        <OverflowToolbar id="_IDGenOverflowToolbar1">
+                            <Title id="_IDGenTitle12" text="{ parts: ['i18n>flightsTitle', 'carriers&gt;/Flights'], formatter: '.formatter.countTitle' }"/>
+                        </OverflowToolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column id="_IDGenColumn12"><Text id="_IDGenText22" text="{i18n>carrier}"/></Column>
+                        <Column id="_IDGenColumn22"><Text id="_IDGenText122" text="{i18n>connection}"/></Column>
+                        <Column id="_IDGenColumn32"><Text id="_IDGenText222" text="{i18n>Plane}"/></Column>
+                        <Column id="_IDGenColumn42" minScreenWidth="Tablet" demandPopin="true"><Text id="_IDGenText322" text="{i18n>departure}"/></Column>
+                        <Column id="_IDGenColumn52" hAlign="End"><Text id="_IDGenText422" text="{i18n>price}"/></Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem id="_IDGenColumnListItem33" type="Navigation" press=".onFlightPress">
+                            <cells>
+                                <ObjectIdentifier id="_IDGenObjectIdentifier133" title="{CarrierId}" text="{CarrierId}"/>
+                                <Text id="_IDGenText533" text="{ConnectionId}"/>
+                                <Text id="_IDGenText633" text="{PlaneTypeId}"/>
+                                <Text id="_IDGenText733" text="{FlightDate}"/>
+                                <ObjectNumber id="_IDGenObjectNumber133" number="{ path: 'Price', type: 'Float', formatOptions: { minFractionDigits: 2, maxFractionDigits: 2 } }" unit="{CurrencyCode}"/>
                             </cells>
                         </ColumnListItem>
                     </items>

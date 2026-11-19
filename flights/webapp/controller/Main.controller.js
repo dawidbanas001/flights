@@ -91,6 +91,10 @@ sap.ui.define([
                 carrierId: oContext.getProperty("carrierId"),
                 connId: oContext.getProperty("connId")
             });
+        },
+
+        onOpenConnections() {
+            this.getOwnerComponent().getRouter().navTo("RouteConnections")
         }
     });
 });
